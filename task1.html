@@ -6,7 +6,7 @@
     <title>Task1</title>
   </head>
   <body>
-    <ol>
+    <ol id="list">
       <li>Element 1</li>
       <li>Element 2</li>
       <li>Element 3</li>
@@ -14,4 +14,11 @@
       <li>Element 5</li>
     </ol>
   </body>
+  <script>
+    let elem = document.querySelector("#list");
+    let listNodes = Array.from(elem.children);
+    let listValues = listNodes.map(n => n.innerHTML);
+    let sortedValues = [listValues[0], listValues[4], listValues[1], listValues[3], listValues[2]];
+    alert(sortedValues.join("\n"));
+  </script>
 </html>
