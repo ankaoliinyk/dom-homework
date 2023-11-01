@@ -12,4 +12,23 @@
     <li>horizontal!</li>
   </ul>
   <span>Make me invisible, please!</span>
+  <script>
+    let header = document.querySelector("h1");
+    header.style.backgroundColor = "#90ee8f";
+    let myDiv = document.querySelector("#myDiv");
+    let firstP = myDiv.children[0];
+    firstP.style.fontWeight = 700;
+    let secondP = myDiv.children[1]
+    secondP.style.color = "red";
+    let thirdP = myDiv.children[2];
+    thirdP.style.textDecoration = "underline";
+    let fourthP = myDiv.children[3];
+    fourthP.style.fontStyle = "italic";
+    let invisible = document.querySelector("span");
+    invisible.style.display = "none";
+    let list = document.querySelector("#myList");
+    let listNodes = Array.from(list.children);
+    let listValues = listNodes.map(n => n.innerHTML);
+    list.innerHTML = listValues.join("");
+  </script>
 </body>
