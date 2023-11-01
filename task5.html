@@ -41,5 +41,12 @@
         <p>lorem</p>
     </div>
   </div>
+  <script>
+     let circles = document.querySelectorAll(".circle");
+     Array.from(circles).forEach(function(el) {
+      let animClass = el.getAttribute("data-anim");
+      el.classList.add(animClass);
+     })
+  </script>
 </body>
 </html>
