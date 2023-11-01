@@ -39,4 +39,13 @@
       <div class="out"></div>
     </div>
   </body>
+  <script>
+    let button = document.querySelector(".btn");
+    let out = document.querySelector(".out");
+    button.addEventListener("click", function(event) {
+      let listNodes = Array.from(document.querySelectorAll(".arr"));
+      let listValues = listNodes.map(n => n.value);
+      out.innerHTML = listValues.join("<br />");
+    })
+  </script>
 </html>
