@@ -1,0 +1,13 @@
+<body>
+    <script>
+        let paragraph = document.createElement("p");
+        paragraph.innerHTML = "First paragraph";
+        let div = document.createElement("div");
+        div.id = "myDiv";
+        div.appendChild(paragraph);
+        let main = document.createElement("main");
+        main.classList.add("mainClass", "check", "item");
+        main.appendChild(div);
+        document.body.appendChild(main);
+    </script>
+</body>
