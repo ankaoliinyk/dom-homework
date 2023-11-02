@@ -41,7 +41,6 @@
                 <h3 class="title">Color</h3>
                 <div class="colors">
                     <span class="color active" primary="#2175f5" color="blue" data-price="300"></span>
-                  
                     <span class="color" primary="#f84848" color="red" data-price="570"></span>
                     <span class="color" primary="#29b864" color="green" data-price="470"></span>
                     <span class="color" primary="#ff5521" color="orange" data-price="260"></span>
@@ -50,11 +49,27 @@
             </div>
             <div class="size-container">
                     <i class="fas fa-dollar-sign"></i>
-                    <h1 id="outprice"> 189.99</h1>
+                    <h1 id="outprice">$ 189.99</h1>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    let price = document.querySelector("#outprice");
+    let colors = document.querySelectorAll(".color");
+    Array.from(colors).forEach(function(el) {
+       el.addEventListener("click", function(event) {
+            document.querySelector(".color.active").classList.remove("active");
+            el.classList.add("active");
+            document.querySelector(".gradient.second").classList.remove("second");
+            let color = el.getAttribute("color");
+            document.querySelector(".gradient[color='" + color +  "']").classList.add("second");
+            document.querySelector(".shoe.show").classList.remove("show");
+            document.querySelector(".shoe[color='" + color + "']").classList.add("show");
+            price.innerHTML = "$ " + el.getAttribute("data-price");
+       })
+    })
+</script>
 </body>
 </html>
